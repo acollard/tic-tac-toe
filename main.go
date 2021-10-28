@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
@@ -68,7 +67,15 @@ func play(tracker map[string]string, gameboard []string, turn int) {
 }
 
 func getHash(board []string) string {
-	return strings.Join(board, "")
+	hash := ""
+	for _, v := range board {
+		if v == "" {
+			hash += " "
+		} else {
+			hash += v
+		}
+	}
+	return hash
 }
 
 // there are 8 unique win locations for each side
