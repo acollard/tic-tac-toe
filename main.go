@@ -49,7 +49,7 @@ func play(tracker map[string]string, gameboard []string, turn int) {
 					continue
 				}
 				winner := ""
-				if turn > 5 {
+				if turn >= 5 {
 					// Check for a winner
 					winner = whoWon(boardCopy)
 				}
